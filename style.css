@@ -1,0 +1,162 @@
+:root {
+  --p-softblue: #8bacda;
+  --p-cyan: #00fff7;
+  --clr-main-bg: #0d192b;
+  --clr-card-bg: #14253d;
+  --clr-card-line: #2f415b;
+  --white: #fff;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.125rem;
+  background-color: var(--clr-main-bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--p-cyan);
+  outline-offset: 0.125em;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75em;
+  font-weight: 600;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+  transition: all 300ms;
+}
+a:hover, a:focus-visible {
+  color: var(--p-cyan);
+}
+
+p {
+  color: rgba(139, 172, 218, 0.8);
+  font-weight: 300;
+  margin-bottom: 1em;
+}
+
+.price, .time {
+  font-size: 1rem;
+  font-weight: 400;
+  position: relative;
+}
+.price::before, .time::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-40%);
+}
+
+.price {
+  color: var(--p-cyan);
+  letter-spacing: 0.06rem;
+  margin-left: 1.125em;
+}
+.price::before {
+  content: url(./images/icon-ethereum.svg);
+  left: -1.125rem;
+}
+
+.time {
+  color: var(--p-softblue);
+}
+.time::before {
+  content: url(./images/icon-clock.svg);
+  left: -1.5em;
+}
+
+.creator {
+  font-size: 1rem;
+}
+
+.card {
+  background-color: var(--clr-card-bg);
+  width: 22em;
+  max-width: 100%;
+  padding: 1.5em;
+  border-radius: 1em;
+  margin: 10rem auto;
+  box-shadow: 0.5em 0.5em 2em 0.5em rgba(7, 14, 23, 0.3);
+}
+
+.nft {
+  margin-bottom: 1em;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+.nft img {
+  width: 100%;
+  border-radius: 0.5em;
+}
+.nft__hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 255, 247, 0.3);
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5em;
+  opacity: 0;
+  transition: all 300ms;
+}
+.nft__hover img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3em;
+}
+.nft__hover:hover, .nft__hover:focus-visible {
+  opacity: 1;
+  cursor: pointer;
+  outline: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--clr-card-line);
+  margin: 1em 0;
+}
+
+.creator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+.creator p {
+  margin: 0;
+  margin-left: 1em;
+}
+
+.avatar {
+  width: 2.5em;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+}
+
+.attribution {
+  text-align: center;
+  margin: 0 2em;
+}
